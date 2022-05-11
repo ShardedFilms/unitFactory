@@ -17,13 +17,13 @@
 
 const ui = require("ui-lib/library");
 
-const maxCount = 100;
-const maxRand = 10;
+const maxCount = 1000;
+const maxRand = 80;
 
 const pos = new Vec2(-1, -1);
 
 var dialog = null, button = null;
-var spawning = UnitTypes.stell, count = 1;
+var spawning = UnitTypes.dagger, count = 1;
 var team = Vars.state.rules.waveTeam;
 // Default 2 tiles of random to the unit position
 var rand = 2;
@@ -79,7 +79,7 @@ ui.onLoad(() => {
 			// Block "unit" for payloads
 			if (unit.isHidden()) return;
 
-			if (i++ % 4 == 0) {
+			if (i++ % 10 == 0) {
 				list.row();
 			}
 
@@ -87,7 +87,7 @@ ui.onLoad(() => {
 			list.button(icon, () => {
 				spawning = unit;
 				button.style.imageUp = icon;
-			}).size(128);
+			}).size(96);
 		});
 	}).top().center();
 	table.row();
