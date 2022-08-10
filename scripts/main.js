@@ -23,7 +23,7 @@ const maxRand = 80;
 const pos = new Vec2(-1, -1);
 
 var dialog = null, button = null;
-var spawning = UnitTypes.dagger, count = 1;
+var spawning = UnitTypes.nova, count = 1;
 var team = Vars.state.rules.waveTeam;
 // Default 2 tiles of random to the unit position
 var rand = 2;
@@ -79,7 +79,7 @@ ui.onLoad(() => {
 			// Block "unit" for payloads
 			if (unit.isHidden()) return;
 
-			if (i++ % 10 == 0) {
+			if (i++ % 12 == 0) {
 				list.row();
 			}
 
@@ -134,7 +134,7 @@ ui.onLoad(() => {
 				+ ", " + Math.round(pos.y / 8);
 			dialog.show();
 		}, true);
-	}).width(200).get();
+	}).width(300).get();
 
 	table.row();
 
